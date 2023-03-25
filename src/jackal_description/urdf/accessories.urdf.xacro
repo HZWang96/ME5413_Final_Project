@@ -51,7 +51,7 @@
     - utm30            :: Hokuyo UTM30
   -->
   <!-- Primary 2D Lidar -->
-  <xacro:if value="$(optenv JACKAL_LASER 1)">
+  <xacro:if value="$(optenv JACKAL_LASER 0)">
     <xacro:property name="mount" value="$(optenv JACKAL_LASER_MOUNT front)" />
     <xacro:property name="topic" value="$(optenv JACKAL_LASER_TOPIC front/scan)" />
     <xacro:property name="tower" value="$(optenv JACKAL_LASER_TOWER 1)" />
@@ -176,7 +176,7 @@
     - vlp16 (default)  :: Velodyne VLP16
     - vlp32e           :: Velodyne HDL-32E
   -->
-  <xacro:if value="$(optenv JACKAL_LASER_3D 1)">
+  <xacro:if value="$(optenv JACKAL_LASER_3D 0)">
     <xacro:property name="mount" value="$(optenv JACKAL_LASER_3D_MOUNT mid)" />
     <xacro:property name="topic" value="$(optenv JACKAL_LASER_3D_TOPIC mid/points)" />
     <xacro:property name="tower" value="$(optenv JACKAL_LASER_3D_TOWER 1)" />
@@ -275,7 +275,7 @@
   <xacro:include filename="$(find pointgrey_camera_description)/urdf/pointgrey_flea3.urdf.xacro" />
 
   <!-- If enabled, generate the flea3 camera payload with a tilt of 30 degrees. -->
-  <xacro:if value="$(optenv JACKAL_FLEA3 1)">
+  <xacro:if value="$(optenv JACKAL_FLEA3 0)">
     <xacro:property name="name" value="$(optenv JACKAL_FLEA3_NAME front)" />
     <xacro:property name="tilt" value="$(optenv JACKAL_FLEA3_TILT 0.)" />
     <xacro:property name="tower" value="$(optenv JACKAL_FLEA3_TOWER 1)" />
