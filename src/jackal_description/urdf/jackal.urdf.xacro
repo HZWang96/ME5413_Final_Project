@@ -248,7 +248,7 @@
   
   <!--add my 2d lidar to the chassis. --> 
 
-  <xacro:include filename="/home/jidan/Documents/Autonomous_Mobile_Robotics/ME5413_Final_Project/src/jackal_description/urdf/lidar_gazebo.xacro" />
+  <xacro:include filename="$(find jackal_description)/urdf/lidar_gazebo.xacro" />
   <xacro:rplidar prefix="laser"/>
   <joint name="lidar_joint" type="fixed">
     <parent link="mid_mount" />
@@ -256,7 +256,7 @@
     <origin xyz="0 0 -0.209" />  
   </joint>
   
-  <xacro:include filename="/home/jidan/Documents/Autonomous_Mobile_Robotics/ME5413_Final_Project/src/jackal_description/urdf/kinect_gazebo.xacro" />
+  <xacro:include filename="$(find jackal_description)/urdf/kinect_gazebo.xacro" />
   <xacro:kinect_camera prefix="kinect"/>
   <joint name="kinect_joint" type="fixed">
     <parent link="mid_mount" />
