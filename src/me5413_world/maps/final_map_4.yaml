@@ -1,4 +1,4 @@
-image: /home/lde/www/final_map_4.pgm
+image: final_map_4.pgm
 resolution: 0.05
 origin: [-1.16407, -17.9915, 0.0]
 negate: 0
