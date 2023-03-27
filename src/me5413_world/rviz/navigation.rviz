@@ -258,7 +258,7 @@ Visualization Manager:
           Size (Pixels): 3
           Size (m): 0.05000000074505806
           Style: Spheres
-          Topic: /front/scan
+          Topic: /scan
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -359,6 +359,16 @@ Visualization Manager:
           Enabled: true
           Name: Map
           Topic: /map
+          Unreliable: false
+          Use Timestamp: false
+          Value: true
+        - Alpha: 0.699999988079071
+          Class: rviz/Map
+          Color Scheme: costmap
+          Draw Behind: true
+          Enabled: true
+          Name: Map
+          Topic: /move_base/local_costmap/costmap
           Unreliable: false
           Use Timestamp: false
           Value: true

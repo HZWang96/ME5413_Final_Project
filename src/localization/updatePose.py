@@ -1,17 +1,20 @@
 import rospy
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import PoseWithCovarianceStamped
+import message_filters
 
 class InitialPosePublisher:
     def __init__(self):
         # Initialize ROS node
         rospy.init_node('initial_pose_publisher')
 
-        # Set up subscriber to robot's odometry topic
-        rospy.Subscriber('/odometry/filtered', Odometry, self.odom_callback, queue_size=1)
+        # Set up subscribers to robot's odometry topic
+        self.odom_sub = message_filters.Subscriber('/odometry/filtered', Odometry)
+        self.odom_time_sync = message_filters.TimeSynchronizer([self.odom_sub], queue_size=1)
+        self.odom_time_sync.registerCallback(self.odom_callback)
 
         # Set up publisher to the initial pose topic
-        self.initial_pose_pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped, queue_size=30)
+        self.initial_pose_pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped, queue_size=1)
 
         # Set linear and angular velocity thresholds
         self.linear_vel_threshold = 0.02 # m/s
