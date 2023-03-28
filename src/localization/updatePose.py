@@ -28,11 +28,11 @@ class InitialPosePublisher:
         self.timer = rospy.Timer(rospy.Duration(3.0), self.publish_initial_pose)
 
     def odom_callback(self, odom_msg):
-        self.i+=1
-        if self.i != 5:
-            return
-        else:
-            self.i = 0
+        # self.i+=1
+        # if self.i != 5:
+        #     return
+        # else:
+        #     self.i = 0
         # Check if robot is stationary
         linear_vel = odom_msg.twist.twist.linear.x
         angular_vel = odom_msg.twist.twist.angular.z

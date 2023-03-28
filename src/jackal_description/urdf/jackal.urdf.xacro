@@ -256,6 +256,8 @@
     <origin xyz="0 0 -0.209" />  
   </joint>
   
+  <!--add my camera to the chassis. 
+  
   <xacro:include filename="$(find jackal_description)/urdf/kinect_gazebo.xacro" />
   <xacro:kinect_camera prefix="kinect"/>
   <joint name="kinect_joint" type="fixed">
@@ -263,7 +265,7 @@
     <child link="kinect_link" />
     <origin xyz="0.15 0 0.035" />  
   </joint>
-
+-->
 
   <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="$(find jackal_description)/urdf/jackal.gazebo" />
