@@ -60,7 +60,12 @@ class VirtualWallServer
       {
         ros::spinOnce();
         publishCloud();
-        debugCloud();
+        // Check if 15 seconds have passed since the last debug message
+        if ((ros::Time::now() - last_debug_time).toSec() >= 15.0)
+        {
+            debugCloud();
+            last_debug_time = ros::Time::now();
+        }
         r.sleep();
       }
     }
@@ -72,7 +77,7 @@ class VirtualWallServer
     ros::ServiceServer create_wall_service;
     ros::ServiceServer delete_wall_service;
     ros::ServiceServer delete_all_service;
-
+    ros::Time last_debug_time;
     void mapCallback(const nav_msgs::OccupancyGridConstPtr& msg)
     {
       if (first_map_received_)return;
