@@ -17,10 +17,5 @@ global_costmap:
    - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
 
 inflater_layer:
-  enabled: true
   inflation_radius: 1.0
-  
-static_layer:
- enable: true
- cost_scaling_factor: 2
  
