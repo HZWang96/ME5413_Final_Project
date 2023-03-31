@@ -61,7 +61,7 @@ class VirtualWallServer
         ros::spinOnce();
         publishCloud();
         // Check if 15 seconds have passed since the last debug message
-        if ((ros::Time::now() - last_debug_time).toSec() >= 15.0)
+        if ((ros::Time::now() - last_debug_time).toSec() >= 5.0)
         {
             debugCloud();
             last_debug_time = ros::Time::now();
@@ -292,6 +292,7 @@ class VirtualWallServer
         std::cout << "[" << clouds_[i].end_x    << ", " << clouds_[i].end_y   << "]" << std::endl;
       }
       std::cout << std::endl;
+      publishCloud();
     }
 
 };
