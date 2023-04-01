@@ -12,7 +12,6 @@ meter_scoring: true
 
 footprint: [[-0.25, -0.175], [-0.25, 0.175], [0.25, 0.175], [0.25, -0.175]]
 footprint_padding: 0.12
-
 plugins:
 - {name: static_layer, type: "costmap_2d::StaticLayer"}
 - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
@@ -33,10 +32,11 @@ static_layer:
  subscribe_to_updates: true
  unknown_cost_value: 0
  lethal_cost_threshold: 100000
+ lethal_cost: 253
  cost_scaling_factor: 2
  
  # Set COST_NEUTRAL
- COST_NEUTRAL: 50
+ COST_NEUTRAL: 66
  
  # Set COST_FACTOR
  COST_FACTOR: 0.55
