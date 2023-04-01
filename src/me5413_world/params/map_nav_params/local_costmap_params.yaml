@@ -9,7 +9,7 @@ local_costmap:
    static_map: false
    rolling_window: true
    
-   inflation_radius: 0.22
+   inflation_radius: 0.2
    cost_scaling_factor: 3.5
 
 plugins:
