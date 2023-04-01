@@ -11,7 +11,9 @@ local_costmap:
    
    inflation_radius: 0.2
    cost_scaling_factor: 3.5
+   static_layer: false
 
 plugins:
+   # - {name: static_layer, type: "costmap_2d::StaticLayer"}
    - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
    - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
