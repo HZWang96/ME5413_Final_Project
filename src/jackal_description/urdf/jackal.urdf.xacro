@@ -246,7 +246,7 @@
     <origin xyz="${mount_spacing} 0 0" />
   </joint>
   
-  <!--add my 2d lidar to the chassis. --> 
+  <!--add my 2d lidar to the chassis.  
 
   <xacro:include filename="$(find jackal_description)/urdf/lidar_gazebo.xacro" />
   <xacro:rplidar prefix="laser"/>
@@ -254,9 +254,9 @@
     <parent link="mid_mount" />
     <child link="laser_link" />
     <origin xyz="0 0 -0.209" />  
-  </joint>
+  </joint>-->
   
-  <!--add my camera to the chassis. -->
+  <!--add my camera to the chassis. 
   
   <xacro:include filename="$(find jackal_description)/urdf/kinect_gazebo.xacro" />
   <xacro:kinect_camera prefix="kinect"/>
@@ -264,7 +264,7 @@
     <parent link="mid_mount" />
     <child link="kinect_link" />
     <origin xyz="0.15 0 0.035" />  
-  </joint>
+  </joint>-->
 
 
   <!-- Bring in simulation data for Gazebo. -->

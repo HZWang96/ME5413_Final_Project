@@ -51,7 +51,7 @@
     - utm30            :: Hokuyo UTM30
   -->
   <!-- Primary 2D Lidar -->
-  <xacro:if value="$(optenv JACKAL_LASER 1)">
+  <xacro:if value="$(optenv JACKAL_LASER 0)">
     <xacro:property name="mount" value="$(optenv JACKAL_LASER_MOUNT front)" />
     <xacro:property name="topic" value="$(optenv JACKAL_LASER_TOPIC front/scan)" />
     <xacro:property name="tower" value="$(optenv JACKAL_LASER_TOWER 1)" />
@@ -65,7 +65,7 @@
       <xacro:if value="${tower}">
         <xacro:if value="${mount_type == 'upright'}">
           <xacro:sick_lms1xx_upright_mount topic="${topic}" prefix="${prefix}" parent_link="${parent}">
-            <origin xyz="$(optenv JACKAL_LASER_OFFSET -0.12 0 0.16)" rpy="$(optenv JACKAL_LASER_RPY 0 0 0)" />
+            <origin xyz="$(optenv JACKAL_LASER_OFFSET -0.12 0 0)" rpy="$(optenv JACKAL_LASER_RPY 0 0 0)" />
           </xacro:sick_lms1xx_upright_mount>
         </xacro:if>
         <xacro:if value="${mount_type == 'inverted'}">
@@ -176,7 +176,7 @@
     - vlp16 (default)  :: Velodyne VLP16
     - vlp32e           :: Velodyne HDL-32E
   -->
-  <xacro:if value="$(optenv JACKAL_LASER_3D 0)">
+  <xacro:if value="$(optenv JACKAL_LASER_3D 1)">
     <xacro:property name="mount" value="$(optenv JACKAL_LASER_3D_MOUNT mid)" />
     <xacro:property name="topic" value="$(optenv JACKAL_LASER_3D_TOPIC mid/points)" />
     <xacro:property name="tower" value="$(optenv JACKAL_LASER_3D_TOWER 0)" />
