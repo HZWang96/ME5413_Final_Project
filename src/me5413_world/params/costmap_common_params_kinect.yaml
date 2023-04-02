@@ -11,7 +11,7 @@ transform_tolerance: 0.5
 meter_scoring: true
 
 footprint: [[-0.25, -0.175], [-0.25, 0.175], [0.25, 0.175], [0.25, -0.175]]
-footprint_padding: 0.12
+footprint_padding: 0.05
 plugins:
 - {name: static_layer, type: "costmap_2d::StaticLayer"}
 - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
@@ -24,9 +24,6 @@ obstacles_layer:
   virtual_wall: {data_type: PointCloud2, topic: /virtual_wall_cloud, marking: true, clearing: true, obstacle_range: 1000, raytrace_range: 1000}
   
   kinect: {data_type: PointCloud2, topic: /kinect/depth/points_filtered, marking: true, clearing: true, obstacle_range: 1000, raytrace_range: 1000}
-
-  # decay_time: 0.2
-# sensor_frame: front_laser
  
 static_layer:
  map_topic: /map
